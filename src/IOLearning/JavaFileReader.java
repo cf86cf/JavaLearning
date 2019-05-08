@@ -9,13 +9,13 @@ public class JavaFileReader {
     public static void  main(String[] args){
         String  string;
         try {
-            File file = new File("F:\\JavaDaily\\src\\hello.txt");  //按行读取txt文件中的内容
+            File file = new File("src//IOLearning//hello.txt");  //按行读取txt文件中的内容
             BufferedReader reader = new BufferedReader(new FileReader(file));
             while((string = reader.readLine())!= null){
                 System.out.println(string);
             }
 
-            File f = new File("E:\\File_package"+File.separator) ;
+            File f = new File("E:\\"+File.separator) ;
             String str[] = f.list() ;                                           // 列出给定目录中的内容
             File files[] = f.listFiles();                                       // 列出包含完整目录的内容
 //            for(int i=0;i<str.length;i++){

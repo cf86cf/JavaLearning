@@ -3,6 +3,12 @@ package CollectionLearning;
 import java.util.HashMap;
 
 /**
+ * equals 是 Object类中的方法，
+ * public boolean equals(Object obj) {
+ *        return (this == obj);
+ *    }
+ * 如果不重写，是判断两个对象是否相同，等同于  == ，
+ *
  * 重写equals时必须重写 hashcode()
  * hashCode 方法的常规协定，
  * 该协定声明相等对象必须具有相等的哈希码
@@ -15,8 +21,8 @@ import java.util.HashMap;
  * hashCode() 的默认行为是对堆上的对象产生独特值。如果没有重写 hashCode()，则该 class 的两个对象无论如何都不会相等（即使这两个对象指向相同的数据）
  */
 class People{
+    public int age;
     private String name;
-    private int age;
 
     public People(String name,int age) {
         this.name = name;

@@ -82,6 +82,7 @@ public class JavaCollection {
             String stringnext = iteratorstring.next();
             System.out.println(stringnext + " hashcode " + stringnext.hashCode());
         }
+        System.out.println(map);
 
     }
 
