@@ -33,7 +33,6 @@ import java.util.*;
  *
  * ArrayList 非线程安全
  * Vector 线程安全
- *
  * Vector 性能比ArrayList差
  *
  * ArrayList 遍历方式有 三种
@@ -44,6 +43,10 @@ import java.util.*;
  *  LinkedList 以链表的形式保存元素
  *  在插入，删除时效率高
  *  随机访问元素的性能较差
+ *
+ *  实现了Dueue的接口，可当作双端队列  (Deque接口是Queue接口的子接口，是双端队列
+ *  定义了一系列的first 和 last 的方法
+ *
  */
 public class JavaList {
     public static void main(String[] args){
@@ -116,9 +119,6 @@ public class JavaList {
         }
         end = System.currentTimeMillis();
         System.out.println("运行时间：" + (end - start) + "毫秒");
-        //* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-
-        LinkedList<Integer> linkedList = new LinkedList<>();
 
     }
 }

@@ -46,7 +46,7 @@ public class JavaCollection {
         map.forEach((k,v)->{System.out.println(k + " " + v);});
 
 
-        /**
+        /*
          *  collection中 没有基本类型
          *  int 类型需要封箱成 Integer类型
          *  containsValue( int ) 返回 为false,
@@ -88,10 +88,38 @@ public class JavaCollection {
 
 }
 
-class Month{
+class Month implements Comparable<Month>{
     int days;
-    Month(int days){
+    Month(int days) {
         this.days = days;
+    }
+
+    //compareTo的返回结果为0就表示两个对象相等
+    @Override
+    public int compareTo(Month o) {
+        if(this == o){
+            return 0;
+        }
+        if(o == null){
+            return 1;
+        }
+        //如果有以下两行，Mar 会覆盖掉 Jan
+//        if(o.days == this.days)
+//            return 0;
+        return this.days > o.days? -1 : 1;
+    }
+    @Override
+    public boolean equals(Object obj){
+        if(this == obj){
+            return  true;
+        }
+        if(null == obj){
+            return  false;
+        }
+        if(obj.getClass() == getClass()){
+            return ((Month)obj).days == days;
+        }
+        return true;
     }
 }
 

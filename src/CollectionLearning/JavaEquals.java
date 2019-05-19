@@ -32,17 +32,14 @@ class People{
 
     @Override
     public boolean equals(Object obj) {
-        if(this == obj)
+        if (this == obj)
             return true;
-   //     if (obj instanceof People) {  //不能使用instance 关键字，因为它不能判断是否为该类的子类
-        if(obj != null && obj.getClass() == this.getClass()){   //使用getClass进行类型判断
-            People obj1 = (People) obj;
-            if (obj1.name == null || name == null) {
-                return false;
-            }
-            return this.name.equals(obj1.name) && this.age == obj1.age;
-        }
-        return  false;
+        if (obj == null)
+            return false;
+        if (this.getClass() != obj.getClass())
+            return false;
+        People other = (People) obj;
+        return other.name.equals(name);
     }
 
     @Override
