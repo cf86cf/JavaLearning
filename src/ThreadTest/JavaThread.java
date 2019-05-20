@@ -6,13 +6,38 @@ import static java.lang.Thread.sleep;
  * Java 创建线程
  *
  * 1 继承 thread 类 并重写 run 方法, 通过start()方法启动
- * 2 实现Runnable 接口
+ * 2 实现Runnable 接口 并作为参数传给Thread 变量并start
  *
  * Java 只允许继承一个类 但是可以实现多个接口
- *
  * Thread 类实现了Runnable 接口
+ *
+ * 线程状态： 创建（new  ,就绪（runnable , 运行（running  ,
+ * 阻塞（blocked ） ,time waiting(睡眠或者等待一定的事件） , waiting（等待被唤醒） ,消亡(dead)
  */
 public class JavaThread {
+
+    static class ThreadTest extends Thread{
+        private  static int num=0;
+        public ThreadTest(){
+            num++;
+        }
+
+        @Override
+        public void run(){
+            System.out.println("num " + num +"  --thread id: " + Thread.currentThread().getId());
+        }
+    }
+
+    static class RunnableTest implements Runnable{
+        private static int num=0;
+        public RunnableTest(){
+            num++;
+        }
+        @Override
+        public void run() {
+            System.out.println("num " + num +"  --thread id: " + Thread.currentThread().getId());
+        }
+    }
     public static void main(String [] args){
         ThreadTest threadTest;
         System.out.println("extends  * * * * * * * * * * * * * * * * *");
@@ -50,26 +75,3 @@ public class JavaThread {
     }
 }
 
-
-class ThreadTest extends Thread{
-    private  static int num=0;
-    public ThreadTest(){
-        num++;
-    }
-
-    @Override
-    public void run(){
-        System.out.println("num " + num +"  --thread id: " + Thread.currentThread().getId());
-    }
-}
-
-class RunnableTest implements Runnable{
-    private static int num=0;
-    public RunnableTest(){
-        num++;
-    }
-    @Override
-    public void run() {
-        System.out.println("num " + num +"  --thread id: " + Thread.currentThread().getId());
-    }
-}

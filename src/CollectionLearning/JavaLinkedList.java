@@ -18,6 +18,53 @@ import java.util.LinkedList;
  *
  */
 public class JavaLinkedList {
+
+    static class MyStack{
+
+        private final int size = 10;
+        private LinkedList<Object> linkedList = new LinkedList<>();
+        public void push(Object obj){
+            linkedList.add(obj);
+        }
+        public Object pop(){
+            Object obj = linkedList.getLast();
+            linkedList.removeLast();
+            return obj;
+        }
+        public boolean empty(){
+            return linkedList.isEmpty();
+        }
+        public Object top(){
+            return linkedList.getLast();
+        }
+        public int size(){
+            return linkedList.size();
+        }
+    }
+
+    static class MyQueue{
+        private LinkedList<Object> linkedList = new LinkedList<>();
+        public void push(Object obj){
+            linkedList.add(obj);
+        }
+        public Object pop(){
+            Object obj = linkedList.getFirst();
+            linkedList.removeFirst();
+            return obj;
+        }
+        public Object front(){
+            return  linkedList.getFirst();
+        }
+        public int size(){
+            return linkedList.size();
+        }
+        public boolean empty(){
+            return linkedList.isEmpty();
+        }
+        public Object back(){
+            return linkedList.getLast();
+        }
+    }
     public static void main(String [] args){
 
         // stack 类的简单使用
@@ -45,50 +92,4 @@ public class JavaLinkedList {
         }
     }
 
-}
-class MyStack{
-
-    private final int size = 10;
-    private LinkedList<Object> linkedList = new LinkedList<>();
-    public void push(Object obj){
-        linkedList.add(obj);
-    }
-    public Object pop(){
-        Object obj = linkedList.getLast();
-        linkedList.removeLast();
-        return obj;
-    }
-    public boolean empty(){
-        return linkedList.isEmpty();
-    }
-    public Object top(){
-        return linkedList.getLast();
-    }
-    public int size(){
-        return linkedList.size();
-    }
-}
-
-class MyQueue{
-    private LinkedList<Object> linkedList = new LinkedList<>();
-    public void push(Object obj){
-        linkedList.add(obj);
-    }
-    public Object pop(){
-        Object obj = linkedList.getFirst();
-        linkedList.removeFirst();
-        return obj;
-    }
-    public Object front(){
-        return  linkedList.getFirst();
-    }
-    public int size(){
-        return linkedList.size();
-    }
-    public boolean empty(){
-        return linkedList.isEmpty();
-    }
-    public Object back(){
-        return linkedList.getLast();
-    }
 }
