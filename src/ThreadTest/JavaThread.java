@@ -39,6 +39,7 @@ public class JavaThread {
         }
     }
     public static void main(String [] args){
+
         ThreadTest threadTest;
         System.out.println("extends  * * * * * * * * * * * * * * * * *");
         /*对比 start 和 run 的区别
@@ -47,10 +48,13 @@ public class JavaThread {
             run 是在主线程中直接执行run  (与普通方法调用无差别
          */
         //输出结果显然
+        //对象创建会比 线程创建要快
         for (int i=0;i <50;i++){
             threadTest= new ThreadTest();
             threadTest.start();
         }
+
+        //thread id相同，num递增 顺序输出
         for (int i=0;i <50;i++){
             threadTest= new ThreadTest();
             threadTest.run();
@@ -64,6 +68,7 @@ public class JavaThread {
         System.out.println("implements * * * * * * * * * * * * * * * * *");
 
         //runnable 的使用方法， 把RunnableTest 中的run 方法作为新线程对象的run方法
+        //与threadTest.start（)相同
         RunnableTest runnableTest;
         for (int i=0;i <50;i++){
             runnableTest= new RunnableTest();
