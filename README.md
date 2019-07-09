@@ -4,12 +4,11 @@
 
 
 * 集合类List map set 基础知识，部分函数使用方法，和一些面试问题
-
-     eg: * 一般场景尽可能多考虑使用HashMap，因为其为快速查询设计
-         * 需要特定的排序时，考虑使用TreeMap
-         * 仅仅需要插入的顺序时，考虑使用LinkedHashMap
-        
-    * hash 重写equals 必须重写hashcode 
+  eg: 
+     * 一般场景尽可能多考虑使用HashMap，因为其为快速查询设计
+     * 需要特定的排序时，考虑使用TreeMap
+     * 仅仅需要插入的顺序时，考虑使用LinkedHashMap
+     * hash 重写equals 必须重写hashcode 
 
 * Java 构造器的构造顺序
 
