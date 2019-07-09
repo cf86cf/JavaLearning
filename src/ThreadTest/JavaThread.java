@@ -22,6 +22,7 @@ public class JavaThread {
             num++;
         }
 
+        //Thread.currentThread() 获取当前线程
         @Override
         public void run(){
             System.out.println("num " + num +"  --thread id: " + Thread.currentThread().getId());
@@ -67,7 +68,13 @@ public class JavaThread {
         }
         System.out.println("implements * * * * * * * * * * * * * * * * *");
 
-        //runnable 的使用方法， 把RunnableTest 中的run 方法作为新线程对象的run方法
+        /**
+         * runnable 的使用方法， 把RunnableTest 中的run 方法作为新线程对象的run方法
+         * 将该类作为参数传递给Thread 类
+         */
+
+
+
         //与threadTest.start（)相同
         RunnableTest runnableTest;
         for (int i=0;i <50;i++){
