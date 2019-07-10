@@ -73,8 +73,6 @@ public class JavaThread {
          * 将该类作为参数传递给Thread 类
          */
 
-
-
         //与threadTest.start（)相同
         RunnableTest runnableTest;
         for (int i=0;i <50;i++){
