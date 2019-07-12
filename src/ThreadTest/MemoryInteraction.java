@@ -4,6 +4,7 @@ import java.lang.reflect.Executable;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadFactory;
 
 /**
  * 概念:
@@ -99,9 +100,23 @@ import java.util.concurrent.Executors;
  * 修饰 类，该类不能被继承，类内属性和方法不能被修改
  */
 public class MemoryInteraction {
+    static class Run implements Runnable{
+        @Override
+        public void run(){
+            int i=0;
+            while( i < 10 ){
+                System.out.println( Thread.currentThread().getId() + " count Thread " + i);
+                i++;
+            }
+        }
+    }
     public static  void main(String[] args){
-        ExecutorService es = Executors.newFixedThreadPool(30);
 
+        ExecutorService fixedThreadPool = Executors.newFixedThreadPool(30);
+        ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
+        for(int i=0 ;i < 10; i++)
+//            fixedThreadPool.submit(new Run());
+            cachedThreadPool.submit(new Run());
     }
 
 }
