@@ -28,6 +28,18 @@ import java.io.IOException;
  *
  * isInterrupted()  判断该线程是否处于中断状态
  *
+ *
+ * JVM中， 垃圾意味着未被引用的对象
+ * finalize 函数  对象被垃圾回收之前调用该函数 (只能被执行一次) (不建议使用)
+ * 如何使对象 未被引用呢？
+ * 1 通过归零
+ *      Thread t1 = new Thread();
+ *      t1 = null;
+ * 2 通过为另一个分配引用，
+ *      Object o1 = new Object();  Object o2 = new Object();
+ *      o1 = o2 ; 使 原始分配给o1 的空间未被引用
+ * 3 通过匿名函数
+ *      new Object();
  */
 public class testThread {
 
@@ -52,22 +64,10 @@ public class testThread {
                 e.printStackTrace();
             }
             t2.start();
-            t2.yield();
+                t2.yield();
             t3.start();
 
-            /**
-             * JVM中， 垃圾意味着未被引用的对象
-             * finalize 函数  对象被垃圾回收之前调用该函数
-             * 如何使对象 未被引用呢？
-             * 1 通过归零
-             *      Thread t1 = new Thread();
-             *      t1 = null;
-             * 2 通过为另一个分配引用，
-             *      Object o1 = new Object();  Object o2 = new Object();
-             *      o1 = o2 ; 使 原始分配给o1 的空间未被引用
-             * 3 通过匿名函数
-             *      new Object();
-             */
+
 
             try {
                 Thread.sleep(50);

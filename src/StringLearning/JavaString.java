@@ -54,7 +54,8 @@ public class JavaString {
         try {
             string2 = bufferedReader.readLine();
             String string3 = string2.intern();
-            System.out.println(" == " + string1 == string2);   //对比是否完全相同，分配有相同的地址空间， 此时分配到堆栈区
+            System.out.print(" == " );
+            System.out.println( string1 == string2);   //对比是否完全相同，分配有相同的地址空间， 此时分配到堆栈区
             System.out.println(" equals " + string1.equals( string2));//内容相同
 
             // 使用intern 函数指向字符串池中的对象
