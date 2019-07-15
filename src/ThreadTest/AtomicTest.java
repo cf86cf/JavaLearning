@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 
 
 /**
- * 原子性操作
+ * 原子性操作 CAS算法（compareAndSwap)
  * Atomic 包 部分类的使用
  * AtomicInteger
  * getAndIncrement()方法
@@ -53,7 +53,7 @@ import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
  *
  * countDownLatch(int count)  //等待count个线程工作完  countDown 计数减一
  * ----------------------------------------------------------------------------------------------------------------------------------
- * AtomicStampReference 解决 ABA 问题
+ * AtomicStampReference 解决CAS的  ABA 问题
  * ABA问题, 某个值 从 A修改到了B  又修改回了A, 此时再有其他线程使用该值时, 会认为该值没有被修改
  *
  * AtomicStampReference 类

@@ -1,10 +1,8 @@
 package ThreadTest;
 
-import java.lang.reflect.Executable;
-import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadFactory;
+
 
 /**
  * 概念:
@@ -47,7 +45,7 @@ import java.util.concurrent.ThreadFactory;
  *  多个线程在处理一个共享变量的时候，出现线程安全问题
  *  多线程中，每一个线程都有自己独立的cache，部分数据修改在cache中，还没写到内存中，造成数据不一致问题
  *  处理线程安全问题 方法
- *  volatile 和 synchronized
+ *  【volatile】 和 【synchronized】
  * ----------------------------------------------------------------------------------------------------------------------------------
  * volatile 可见性， 当声明一个变量为volatile 时， 该变量具可见性，
  * 即当一个线程修改它时，其他线程会知道自己 工作内存 中的该变量已经被修改了，从而直接去内存中读取该变量，而不是使用自己工作内存中的变量副本。

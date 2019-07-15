@@ -14,6 +14,13 @@ import java.util.*;
  * containsValue
  *
  * HashSet和 LinkedHashSet的区别
+ *
+ * ----------------------------------------------------------------------------------------------------------------------------------
+ *
+ * 不可变对象
+ * Collections.unmodifiableXXX : (Collection List Set Map
+ *
+ * Guava: ImmutableXXX : Collection List Set Map
  */
 public class JavaCollection {
     public static void main(String[] args){
