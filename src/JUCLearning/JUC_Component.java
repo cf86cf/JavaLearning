@@ -8,7 +8,7 @@ package JUCLearning;
  * @see      java.util.concurrent;
  * @since    JDK1.8
  *
- * Todo : 介绍一下 J.U.C 的构成 (tools locks atomic collections executor)5 部分
+ * @brief : 介绍一下 J.U.C 的构成 (tools locks atomic collections executor)5 部分
  *
  * ----------------------------------------------------------------------------------------------------------------------------------
  * AQS  AbstractQueuedSynchronizer

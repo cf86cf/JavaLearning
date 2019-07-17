@@ -7,7 +7,7 @@ package JUCLearning;
  * @see      java.util.concurrent.CyclicBarrier;
  * @since    JDK1.8
  *
- * Todo: 专门测试一下CyclicBarrier 类的使用
+ * @brief: 专门测试一下CyclicBarrier 类的使用
  *
  * 【CyclicBarrier】的使用方法：
  * 和countDownlatch 的使用方法相像
@@ -21,7 +21,7 @@ package JUCLearning;
  * await()  一直等待
  * await(long timeout, TimeUnit unit)  等待timeout时长后继续执行
  * （防止出现凑不够指定数量的线程 而出现死等待的情况
- * （线程数量13 ， CyclicBarrier初始值为5  最后3个线程一直不能继续执行）
+ * （如果线程数量13 ， CyclicBarrier初始值为5  使用await()则最后3个线程一直不能继续执行）
  *
  * CyclicBarrier 和 CountDownLatch的【区别】
  *
@@ -66,9 +66,13 @@ public class CyclicBarrierTest {
     private static void race (int threadNum){
 
         try{
-            Thread.sleep(1000);
+//            Thread.sleep(1000);
             System.out.println("threadNum : " +threadNum + " is ready");
-            cyclicBarrier.await(2000,TimeUnit.MILLISECONDS);
+
+            //等待时间结束仍没有达到屏障初始值，从而跳过屏障继续执行
+            //TimeoutException
+            //BrokenBarrierException
+            cyclicBarrier.await(4000,TimeUnit.MILLISECONDS);
         } catch (BrokenBarrierException e){
             System.out.println("BrokenBarrierException " + e);
         } catch (InterruptedException e) {

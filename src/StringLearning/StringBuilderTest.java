@@ -12,7 +12,7 @@ import java.util.concurrent.Semaphore;
  * @see      java.util.concurrent.Executors;
  * @since    JDK1.8
  *
- * TODO 检测StringBuilder是一个线程不安全的类
+ * @brief 检测StringBuilder是一个线程不安全的类
  *
  * 传入clientThread 请求5000次，每次append 一个字符
  * 输出结果 小于5000次

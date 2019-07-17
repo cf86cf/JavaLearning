@@ -10,7 +10,7 @@ import java.util.Vector;
  * @see      java.util.Vector;
  * @since    JDK1.8
  *
- * TODO 使用三种方法foreach iterator for 遍历vector并移除数据 (单线程下异常)
+ * @brief 使用三种方法foreach iterator for 遍历vector并移除数据 (单线程下异常)
  *
  * 其他容器类似
  *

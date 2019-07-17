@@ -8,7 +8,7 @@ import java.util.Vector;
  * @see      java.util.Vector;
  * @since    JDK1.8
  *
- * Todo: 检测Vector不是一个绝对线程安全的类
+ * @brief: 检测Vector不是一个绝对线程安全的类
  *
  * 线程安全：
  * 当多个线程访问一个对象时，如果不用考虑这些线程在运行时环境下的调度和交替执行，

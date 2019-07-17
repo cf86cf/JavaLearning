@@ -12,7 +12,7 @@ import java.util.concurrent.Semaphore;
  * @see      java.util.concurrent.Executors;
  * @since    JDK1.8
  *
- * TODO 检测StringBuffer是一个线程安全的类
+ * @brief 检测StringBuffer是一个线程安全的类
  *
  * stringBuffer 内实现时加入了synchronized关键字
  *

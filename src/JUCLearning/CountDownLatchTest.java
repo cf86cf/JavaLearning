@@ -7,7 +7,7 @@ package JUCLearning;
  * @see      java.util.concurrent.CountDownLatch;
  * @since    JDK1.8
  *
- * Todo: 专门测试一下CountDownLatch 类的使用
+ * @brief: 专门测试一下CountDownLatch 类的使用
  *
  * countDownlatch 的使用方法
  *

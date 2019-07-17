@@ -10,7 +10,7 @@ import java.util.concurrent.*;
  * @see      java.util.concurrent.CopyOnWriteArrayList;
  * @since    JDK1.8
  *
- * Todo : 测试CopyOnWriteArrayList (并发容器)写入安全
+ * @brief : 测试CopyOnWriteArrayList (并发容器)写入安全
  *
  * 适合读多 写少的场景
  * 当有新的写入操作时,复制原数组的内容到一个新数组,对新数组进行写入,再将地址指向新数组

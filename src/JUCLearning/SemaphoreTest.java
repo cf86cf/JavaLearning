@@ -9,7 +9,7 @@ import java.util.concurrent.*;
  * @see      java.util.concurrent.Semaphore;
  * @since    JDK1.8
  *
- * Todo: 专门测试一下Semaphore 类的使用 （以及如何舍弃没有获得信号量的线程）
+ * @brief: 专门测试一下Semaphore 类的使用 （以及如何舍弃没有获得信号量的线程）
  *
  * semaphore 初始化时 设置允许的信号量的个数
  * 当 个数为 1 时，和单线程 就很相似了
@@ -37,7 +37,7 @@ import java.util.concurrent.*;
  * tryAcquire(long timeout, TimeUnit unit)  等待时间内尝试获取许可
  * tryAcquire(int permits, long timeout, TimeUnit unit) 等待时间内尝试获取多个许可
  */
-public class semaphoreTest {
+public class SemaphoreTest {
     private final static int threadCount = 20;
 
     public static void main(String[] args) throws Exception{
