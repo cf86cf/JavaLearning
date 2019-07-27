@@ -69,6 +69,7 @@ public class ReentrantLockTest {
                 }
             });
         }
+
         try {
             countDownLatch.await();
         } catch (InterruptedException e) {
